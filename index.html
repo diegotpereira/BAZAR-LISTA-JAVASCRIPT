@@ -1,15 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>BAZAR</title>
+    <link rel="stylesheet" href="https://bootswatch.com/4/cosmo/bootstrap.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
 </head>
 
 <body>
+    <div class="bg-dark text-light mb-4">
+        <h1 class="py-4 text-center display-5">Lista do Bazar</h1>
+    </div>
+    <div class="container">
+        <div class="car card-body card-form">
+            <form onsubmit="event.preventDefault(); submeterFormulario();" autocomplete="off">
+                <div>
+                    <label>Nome</label><label class="validation-error hide" id="nomeValidationError"></label>
+                    <input class="form-control" type="text" name="nome" id="nome" placeholder="Digite o nome" required>
+                </div>
+                <div class="mt-3">
+                    <label>Quantidade</label>
+                    <input class="form-control" type="text" name="quantidade" id="quantidade" placeholder="kg" required>
+                </div>
+                <div class="mt-3">
+                    <label>Qualidade (Opcional)</label>
+                    <input class="form-control" type="text" name="qualidade" id="qualidade" placeholder="Bom/Super/Premium">
+                </div>
+                <div class="mt-3">
+                    <label>Preço</label>
+                    <input class="form-control" type="text" name="preco" id="preco" placeholder="R$" required>
+                </div>
+                <div class="form-action-buttons">
+                    <input type="submit" value="Adicionar na Lista" class="btn btn-primary mt-2">
+                    <input type="reset" value="Redefinir" class="btn btn-primary mt-2 ml-2">
+                </div>
+            </form>
+        </div>
+        <div class="card card-body card-form mt-4">
+            <table class="list table" id="bazarLista">
+                <thead class="thead-dark bg-primary">
+                    <tr>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Quantidade</th>
+                        <th scope="col">Qualidade</th>
+                        <th scope="col">Preço</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
 
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <footer class="mt-5 p-3 text-center bg-light">
+        &copy; 2021 | Desenvolvido por DTP Software
+    </footer>
+    <script src="js/index.js"></script>
 </body>
 
 </html>
